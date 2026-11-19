@@ -31,6 +31,8 @@ export function BenefitsGridSection() {
         <img
           src={STUDIO_INFO.stretchImage}
           alt=""
+          loading="lazy"
+          decoding="async"
           referrerPolicy="no-referrer"
           className="h-full w-full object-cover object-center"
         />
@@ -44,6 +46,8 @@ export function BenefitsGridSection() {
             <img
               src={STUDIO_INFO.stretchImage}
               alt="Estiramiento y postura en Reformer en Lunaria"
+              loading="lazy"
+              decoding="async"
               referrerPolicy="no-referrer"
               className="h-full w-full object-cover object-center"
             />

@@ -21,6 +21,7 @@ export function Header({ onOpenBooking }: HeaderProps) {
           <img
             src={STUDIO_INFO.logoImage}
             alt="Lunaria Pilates y bienestar"
+            decoding="async"
             className="h-14 w-auto shrink-0 object-contain sm:h-16"
           />
           <span className="text-[22px] font-semibold leading-none tracking-[0.03em] text-[#1A2816] whitespace-nowrap">

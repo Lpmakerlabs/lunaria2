@@ -25,6 +25,8 @@ export function HeroSection({ onOpenBooking }: HeroSectionProps) {
         <img
           src={STUDIO_INFO.heroImage}
           alt="Estudio Lunaria con camas Reformer y luz natural"
+          fetchPriority="high"
+          decoding="async"
           referrerPolicy="no-referrer"
           className="absolute inset-0 h-full w-full object-cover object-[70%_35%]"
         />

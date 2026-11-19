@@ -14,6 +14,8 @@ export function Footer() {
           <img
             src={STUDIO_INFO.logoLightImage}
             alt="Lunaria Pilates y bienestar"
+            loading="lazy"
+            decoding="async"
             className="h-14 w-auto shrink-0 object-contain"
           />
           <span className="text-[21px] font-semibold leading-none tracking-[0.03em] text-white whitespace-nowrap">

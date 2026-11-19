@@ -20,6 +20,10 @@ export interface ModalityCard {
   imageClassName?: string;
 }
 
+const BASE_URL = import.meta.env?.BASE_URL ?? '/';
+const assetUrl = (relativePath: string) =>
+  `${BASE_URL}${relativePath.replace(/^\/+/, '')}`;
+
 export const STUDIO_INFO = {
   name: 'Lunaria',
   shortLockupTop: 'Estudio de',
@@ -39,12 +43,13 @@ export const STUDIO_INFO = {
   googleRating: '4,9',
   googlePlaceUrl:
     'https://www.google.com/maps/place/Lunaria+pilates+y+bienestar/@-31.425479,-64.1818995,17z/data=!3m1!4b1!4m6!3m5!1s0x9432a3482cf6dff1:0xb8aad5861be320ea!8m2!3d-31.425479!4d-64.1818995',
-  heroImage: '/assets/studio-frames/hero-wide.jpg',
-  stretchImage: '/assets/studio-frames/benefit-stretch.jpg',
-  heroVideo:
-    '/assets/aistudio/AQN3OhYc9K88zrqn6GAfA_fgBxpKHzhjneagy5--APbVQdlp49mjGw4R65JSsYuDxbW88Izxf4rSQXQRItv9hZJgCSdth844_af529878.mp4',
-  logoImage: '/assets/logo-lunaria-dark.png',
-  logoLightImage: '/assets/logo-lunaria-light.png',
+  heroImage: assetUrl('assets/studio-frames/hero-wide.webp'),
+  stretchImage: assetUrl('assets/studio-frames/benefit-stretch.webp'),
+  heroVideo: assetUrl(
+    'assets/aistudio/AQN3OhYc9K88zrqn6GAfA_fgBxpKHzhjneagy5--APbVQdlp49mjGw4R65JSsYuDxbW88Izxf4rSQXQRItv9hZJgCSdth844_af529878.mp4'
+  ),
+  logoImage: assetUrl('assets/logo-lunaria-dark.webp'),
+  logoLightImage: assetUrl('assets/logo-lunaria-light.webp'),
 };
 
 export const CLASS_SCHEDULE = {
@@ -92,7 +97,7 @@ export const MODALITIES: ModalityCard[] = [
     id: 'reformer',
     title: 'Pilates Reformer',
     description: 'Entrenamiento completo, seguro y de bajo impacto.',
-    image: '/assets/studio-frames/card-reformer.jpg',
+    image: assetUrl('assets/studio-frames/card-reformer.webp'),
     alt: 'Práctica en cama Reformer en el estudio',
     bookingOption: 'Pilates Reformer Grupal',
     highlights: [
@@ -105,7 +110,7 @@ export const MODALITIES: ModalityCard[] = [
     id: 'grupal',
     title: 'Pilates Grupal',
     description: 'Energía y bienestar en movimiento.',
-    image: '/assets/studio-frames/pilates-grupal.jpg',
+    image: assetUrl('assets/studio-frames/pilates-grupal.webp'),
     alt: 'Clase grupal de Pilates Reformer en Lunaria',
     bookingOption: 'Pilates Reformer Grupal',
     imageClassName: 'object-bottom',
@@ -119,7 +124,7 @@ export const MODALITIES: ModalityCard[] = [
     id: 'rehabilitacion',
     title: 'Rehabilitación Kinesiológica',
     description: 'Recuperación, prevención y movimiento funcional.',
-    image: '/assets/studio-frames/card-rehab.jpg',
+    image: assetUrl('assets/studio-frames/card-rehab.webp'),
     alt: 'Sesión terapéutica y de rehabilitación kinesiológica en Reformer',
     bookingOption: 'Individual Terapéutico / Rehab. Kinesiológica',
     highlights: [
@@ -133,7 +138,7 @@ export const MODALITIES: ModalityCard[] = [
     title: 'Masajes',
     subtitle: 'Relajantes / Descontracturantes',
     description: 'Alivio de tensiones, reducción del estrés y bienestar general.',
-    image: '/assets/studio-frames/card-masajes.jpg',
+    image: assetUrl('assets/studio-frames/card-masajes.webp'),
     alt: 'Sesión de bienestar, descanso y descarga muscular en el estudio',
     bookingOption: 'Masajes y Bienestar',
     imageClassName: 'sepia-[.25] brightness-90 contrast-95',

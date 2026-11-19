@@ -48,6 +48,8 @@ export function AboutSection({ onOpenStudioInfo }: AboutSectionProps) {
             <img
               src={STUDIO_INFO.heroImage}
               alt="Camas Reformer y luz natural en nuestro estudio de Nueva Córdoba"
+              loading="lazy"
+              decoding="async"
               referrerPolicy="no-referrer"
               className="h-full w-full object-cover object-center"
             />
