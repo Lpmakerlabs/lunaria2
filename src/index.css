@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Gelasio", Georgia, "Times New Roman", serif;
+  --font-serif: "Gelasio", Georgia, "Times New Roman", serif;
+  --font-mono: "Gelasio", Georgia, "Times New Roman", serif;
+}
+
+@layer base {
+  html,
+  body,
+  button,
+  input,
+  select,
+  textarea {
+    font-family: var(--font-sans);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@keyframes lunaria-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.lunaria-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: lunaria-marquee 42s linear infinite;
+  will-change: transform;
+}
+
+.lunaria-marquee-group:hover .lunaria-marquee-track,
+.lunaria-marquee-group:focus-within .lunaria-marquee-track,
+.lunaria-marquee-group[data-paused="true"] .lunaria-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .lunaria-marquee-track {
+    animation: none;
+  }
+}
+
