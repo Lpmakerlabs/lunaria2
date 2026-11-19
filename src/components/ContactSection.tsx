@@ -1,4 +1,4 @@
-import { Calendar, Clock, MapPin, MessageCircle } from 'lucide-react';
+import { Calendar, Clock, ExternalLink, MapPin, MessageCircle } from 'lucide-react';
 import { CLASS_SCHEDULE, STUDIO_INFO } from '../data/studioContent';
 
 interface ContactSectionProps {
@@ -64,8 +64,14 @@ export function ContactSection({ onOpenBooking, onSelectSlot }: ContactSectionPr
               </div>
             </a>
 
-            <div className="flex items-start gap-3 rounded-xl border border-[#E2E6DC] bg-white p-4">
-              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#EDF3E8] text-[#456B2E]">
+            <a
+              href={STUDIO_INFO.googlePlaceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Ver ubicación en Google Maps: ${STUDIO_INFO.fullAddress}`}
+              className="group flex items-start gap-3 rounded-xl border border-[#E2E6DC] bg-white p-4 transition-colors hover:border-[#456B2E]/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#456B2E]"
+            >
+              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#EDF3E8] text-[#456B2E] transition-colors group-hover:bg-[#E1ECD9]">
                 <MapPin className="h-5 w-5" aria-hidden="true" />
               </span>
               <div className="min-w-0">
@@ -75,8 +81,12 @@ export function ContactSection({ onOpenBooking, onSelectSlot }: ContactSectionPr
                   <br />
                   {STUDIO_INFO.neighborhood}
                 </p>
+                <span className="mt-1 inline-flex items-center gap-1 text-[11.5px] font-semibold text-[#456B2E] group-hover:underline">
+                  <span>Ver en Google Maps</span>
+                  <ExternalLink className="h-3 w-3 shrink-0" aria-hidden="true" />
+                </span>
               </div>
-            </div>
+            </a>
 
             <div className="flex items-start gap-3 rounded-xl border border-[#E2E6DC] bg-white p-4">
               <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#EDF3E8] text-[#456B2E]">

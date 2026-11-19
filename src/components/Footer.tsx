@@ -72,8 +72,10 @@ export function Footer() {
             <Instagram className="h-5 w-5" aria-hidden="true" />
           </a>
           <a
-            href="#contacto"
-            aria-label="Ubicación del estudio en Nueva Córdoba"
+            href={STUDIO_INFO.googlePlaceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ver ubicación del estudio en Google Maps"
             className="inline-flex h-10 w-10 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10"
           >
             <MapPin className="h-5 w-5" aria-hidden="true" />
